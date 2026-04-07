@@ -3,26 +3,16 @@ name: Claude Code Review
 on:
   pull_request:
     types: [opened, synchronize, ready_for_review, reopened]
-    # Optional: Only run on specific file changes
-    # paths:
-    #   - "src/**/*.ts"
-    #   - "src/**/*.tsx"
-    #   - "src/**/*.js"
-    #   - "src/**/*.jsx"
 
 jobs:
   claude-review:
-    # Optional: Filter by PR author
-    # if: |
-    #   github.event.pull_request.user.login == 'external-contributor' ||
-    #   github.event.pull_request.user.login == 'new-developer' ||
-    #   github.event.pull_request.author_association == 'FIRST_TIME_CONTRIBUTOR'
-
+    if: github.event.pull_request.user.login != 'dependabot[bot]'
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      pull-requests: read
+      pull-requests: write
       issues: read
+      actions: write
       id-token: write
 
     steps:
@@ -36,9 +26,30 @@ jobs:
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          plugin_marketplaces: 'https://github.com/anthropics/claude-code.git'
-          plugins: 'code-review@claude-code-plugins'
-          prompt: '/code-review:code-review ${{ github.repository }}/pull/${{ github.event.pull_request.number }}'
-          # See https://github.com/anthropics/claude-code-action/blob/main/docs/usage.md
-          # or https://code.claude.com/docs/en/cli-reference for available options
+          use_sticky_comment: true
+          track_progress: true
+          allowed_bots: 'claude,claude[bot]'
+          prompt: |
+            REPO: ${{ github.repository }}
+            PR NUMBER: ${{ github.event.pull_request.number }}
+
+            Review this pull request. For each changed skill file:
+            - Check that the frontmatter (name, description) is accurate and well-written
+            - Flag any hardcoded secrets, tokens, or personal data that should be env vars
+            - Note any broken references (paths, tool names, commands that don't exist)
+            - Call out anything that contradicts how the skill actually works
+
+            Keep feedback concise and actionable. Skip praise.
+            Use inline comments for specific code issues.
+            Use `gh pr comment` for top-level feedback.
+            If everything looks good and there are no issues, post a comment saying "LGTM" followed by one sentence summarizing what you reviewed.
+
+            REVIEW SUBMISSION:
+            After completing your review, submit a formal GitHub review using gh pr review:
+            - If you found issues: `gh pr review ${{ github.event.pull_request.number }} --request-changes --body "Summary of issues found"`
+            - If LGTM: `gh pr review ${{ github.event.pull_request.number }} --approve --body "LGTM - brief summary"`
+            If gh pr review fails (e.g. permissions), fall back to posting a comment with `gh pr comment` instead.
+          claude_args: |
+            --model claude-opus-4-6
+            --fallback-model claude-sonnet-4-6
 
