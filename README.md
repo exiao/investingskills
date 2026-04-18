@@ -134,9 +134,9 @@ No scraping. No stale training data. No hallucinated numbers.
 │  (CLI setup, auth, data rules)  │
 └──────────────┬──────────────────┘
                │ every skill reads this first
-    ┌──────────┼───────────┬──────────────┐
-    ▼          ▼           ▼              ▼
-/research  /review    /discover      /check     /briefing
+    ┌──────────┬──────────┼──────────┬──────────┐
+    ▼          ▼          ▼          ▼          ▼
+/research   /review   /discover   /check    /briefing
 ```
 
 `bloom-data` is the foundation. It checks prerequisites, defines output rules, and documents every CLI command. The 5 skills build on top of it.
