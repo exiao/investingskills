@@ -50,6 +50,6 @@ jobs:
             - If LGTM: `gh pr review ${{ github.event.pull_request.number }} --approve --body "LGTM - brief summary"`
             If gh pr review fails (e.g. permissions), fall back to posting a comment with `gh pr comment` instead.
           claude_args: |
-            --model claude-opus-4-6
+            --model claude-opus-4-8
             --fallback-model claude-sonnet-4-6
 
