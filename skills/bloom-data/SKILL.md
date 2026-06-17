@@ -189,6 +189,11 @@ bloom market --type major_indexes -o /tmp/bloom/indexes.json
 
 Available types: `major_indexes`, `top_movers`, `sector_performance`
 
+Key output fields:
+- `major_indexes`: list with `name`, `price`, `change_pct`, `ytd_change`
+- `top_movers`: list with `ticker`, `change_pct`, `price`, `reason`
+- `sector_performance`: list with `sector`, `change_pct`
+
 ---
 
 ### `bloom portfolio '<json>'`
@@ -228,6 +233,8 @@ bloom collections -o /tmp/bloom/collections.json
 ```
 
 Available sections: `VALUE`, `GROWTH`, `DIVIDEND`, `MOMENTUM`, `DEFENSIVE`
+
+Key output fields: list of collection entries with `ticker`, `name`, `reason`, `score` when available
 
 ---
 

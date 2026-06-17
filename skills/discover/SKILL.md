@@ -79,6 +79,10 @@ cat /tmp/bloom/discover-movers.json | jq '.[:5][] | {ticker, change_pct, price, 
 # Screener picks
 cat /tmp/bloom/discover-screen.json | jq '.[:5][] | {ticker, pe_ratio, revenue_growth, market_cap}'
 
+# Curated collections
+cat /tmp/bloom/discover-value.json | jq '.[:3]'
+cat /tmp/bloom/discover-growth.json | jq '.[:3]'
+
 # Sentiment
 cat /tmp/bloom/discover-sentiment.json | jq '{fear_greed_index, fear_greed_label, aaii_bull, aaii_bear, vix}'
 ```

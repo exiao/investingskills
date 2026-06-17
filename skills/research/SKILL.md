@@ -105,7 +105,7 @@ Use this to assign 🟢/🟡/🔴 to each metric:
 | Revenue Growth (YoY) | >15% | 5-15% | <5% or negative |
 | Operating Margin | >20% | 10-20% | <10% |
 | Free Cash Flow | Positive + growing | Positive, flat | Negative |
-| P/E vs sector | Below avg | At avg | >50% above avg |
+| P/E Ratio | <20 | 20-35 | >35 or negative earnings |
 | Analyst consensus | Majority Buy | Mixed | Majority Sell |
 
 ---

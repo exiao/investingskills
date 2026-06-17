@@ -153,7 +153,7 @@ Be honest. Most trade ideas are somewhere in the middle. ⚠️ is the most comm
 |--------|-------|--------|
 | Current Price | $[X] | |
 | Analyst Target | $[X] ([X]% upside) | 🟢/🟡/🔴 |
-| P/E vs Sector Avg | [X] vs [X] | 🟢/🟡/🔴 |
+| P/E Ratio | [X] | 🟢/🟡/🔴 |
 | Revenue Trend | [X]% YoY | 🟢/🟡/🔴 |
 | Analyst Consensus | [X Buy / X Hold / X Sell] | 🟢/🟡/🔴 |
 | Technical Trend | [Bullish/Bearish/Neutral] | 🟢/🟡/🔴 |
