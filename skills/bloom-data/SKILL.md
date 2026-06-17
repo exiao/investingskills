@@ -219,6 +219,8 @@ bloom screen "market_cap > 10B" "pe_ratio < 20" -o /tmp/bloom/screener.json
 
 Common filters: `market_cap > XB`, `pe_ratio < X`, `revenue_growth > X`, `dividend_yield > X`, `payout_ratio < X`
 
+Key output fields: list of matches with `ticker`, `pe_ratio`, `revenue_growth`, `market_cap`
+
 ---
 
 ### `bloom collections [--section <SECTION>]`
