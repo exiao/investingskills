@@ -63,9 +63,9 @@ Pass the user's actual words. The more specific, the better.
 bloom technicals <TICKER> -o /tmp/bloom/check-technicals.json
 ```
 
-### 4. Revenue trend
+### 4. Revenue growth trend
 ```bash
-bloom financials <TICKER> --type revenue -o /tmp/bloom/check-revenue.json
+bloom financials <TICKER> --type revenue_growth -o /tmp/bloom/check-revenue-growth.json
 ```
 
 ### 5. Earnings history + next date
@@ -99,8 +99,8 @@ cat /tmp/bloom/check-eval.json | jq '{verdict, bull_case, bear_case, risk_reward
 # Technicals
 cat /tmp/bloom/check-technicals.json | jq '{trend, momentum, rsi, support, resistance}'
 
-# Revenue trend
-cat /tmp/bloom/check-revenue.json | jq '.[-4:]'
+# Revenue growth trend (YoY, last 4 periods)
+cat /tmp/bloom/check-revenue-growth.json | jq '.[-4:]'
 
 # Next earnings
 cat /tmp/bloom/check-earnings.json | jq '{next_earnings_date, recent_results}'

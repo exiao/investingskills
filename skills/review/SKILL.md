@@ -53,10 +53,10 @@ bloom portfolio '{"AAPL": 0.4, "MSFT": 0.3, "GOOGL": 0.3}' -o /tmp/bloom/review-
 bloom info AAPL MSFT GOOGL -o /tmp/bloom/review-info.json
 ```
 
-### 4. Revenue financials per ticker
+### 4. Revenue growth financials per ticker
 ```bash
-bloom financials AAPL --type revenue -o /tmp/bloom/review-fin-AAPL.json
-bloom financials MSFT --type revenue -o /tmp/bloom/review-fin-MSFT.json
+bloom financials AAPL --type revenue_growth -o /tmp/bloom/review-fin-AAPL.json
+bloom financials MSFT --type revenue_growth -o /tmp/bloom/review-fin-MSFT.json
 # repeat for each holding
 ```
 
@@ -67,6 +67,10 @@ cat /tmp/bloom/review-portfolio.json | jq '{grade, concentration_risk, sector_br
 
 # Info for each ticker
 cat /tmp/bloom/review-info.json | jq '.[] | {ticker: .symbol, pe: .pe_ratio, sector: .sector, analyst: .analyst_consensus, market_cap: .market_cap}'
+
+# Revenue growth for each holding (YoY, last 4 periods)
+cat /tmp/bloom/review-fin-AAPL.json | jq '.[-4:]'
+cat /tmp/bloom/review-fin-MSFT.json | jq '.[-4:]'
 ```
 
 ---
