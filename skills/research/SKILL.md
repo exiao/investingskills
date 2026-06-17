@@ -32,9 +32,9 @@ mkdir -p /tmp/bloom
 bloom info <TICKER> -o /tmp/bloom/research-info.json
 ```
 
-### 2. Revenue history
+### 2. Revenue growth
 ```bash
-bloom financials <TICKER> --type revenue -o /tmp/bloom/research-revenue.json
+bloom financials <TICKER> --type revenue_growth -o /tmp/bloom/research-revenue-growth.json
 ```
 
 ### 3. Operating margins
@@ -72,8 +72,8 @@ bloom news <TICKER> --limit 5 -o /tmp/bloom/research-news.json
 # Price and valuation
 cat /tmp/bloom/research-info.json | jq '{price, market_cap, pe_ratio, sector, analyst_consensus, price_target, bottom_line}'
 
-# Revenue trend (last 4 periods)
-cat /tmp/bloom/research-revenue.json | jq '.[-4:]'
+# Revenue growth (last 4 periods)
+cat /tmp/bloom/research-revenue-growth.json | jq '.[-4:]'
 
 # Margins trend
 cat /tmp/bloom/research-margins.json | jq '.[-4:]'
