@@ -103,7 +103,7 @@ cat /tmp/bloom/check-technicals.json | jq '{trend, momentum, rsi, support, resis
 cat /tmp/bloom/check-revenue.json | jq '.[-4:]'
 
 # Next earnings
-cat /tmp/bloom/check-earnings.json | jq '{next_earnings_date, last_result}'
+cat /tmp/bloom/check-earnings.json | jq '{next_earnings_date, recent_results}'
 
 # Top catalysts
 cat /tmp/bloom/check-catalysts.json | jq '.catalysts[:3]'

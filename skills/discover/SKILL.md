@@ -1,7 +1,7 @@
 ---
 name: discover
 description: >
-  Find investment opportunities. Combines AI Arena trades (what 3 AI models are doing with real money),
+  Find investment opportunities. Combines AI Arena trades (what Bloom's AI models are doing with real money),
   today's movers, screener picks, and curated collections into one actionable summary.
   Triggers: "find me something to buy", "what should I invest in", "what's looking good",
   "any good opportunities", "what are the AIs buying", "what's trending", "show me ideas",
@@ -104,14 +104,13 @@ Use this to frame the "Market Mood" section:
 ```
 ## What's Worth Looking At
 
-### 🤖 AI Arena — What 3 AIs Are Doing With Real Money
-*These are real portfolios with real money, run by Claude, GPT, and Gemini.*
+### 🤖 AI Arena — What Bloom's AIs Are Doing With Real Money
+*These are real portfolios with real money. Use the model names returned by `bloom ai-portfolio`; do not hardcode a fixed model list.*
 
 | Model | Position | Direction | Ticker | Return |
 |-------|----------|-----------|--------|--------|
-| Claude | [Last trade] | 🟢 Long / 🔴 Exit | [TICKER] | [+X%] |
-| GPT | [Last trade] | 🟢 Long / 🔴 Exit | [TICKER] | [+X%] |
-| Gemini | [Last trade] | 🟢 Long / 🔴 Exit | [TICKER] | [+X%] |
+| [Model from data] | [Last trade] | 🟢 Long / 🔴 Exit | [TICKER] | [+X%] |
+| [One row per returned model] | [Last trade] | 🟢 Long / 🔴 Exit | [TICKER] | [+X%] |
 
 **Who's winning:** [Model] is up [X]% overall.
 **What they agree on:** [If 2+ models hold the same stock, call it out]

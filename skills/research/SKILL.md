@@ -128,7 +128,6 @@ Use exactly this structure:
 | Operating Margin | X% | 🟢/🟡/🔴 |
 | Free Cash Flow | $X | 🟢/🟡/🔴 |
 | P/E Ratio | X | 🟢/🟡/🔴 |
-| EPS Trend | $X → $X | 🟢/🟡/🔴 |
 
 ### What Analysts Say
 [X] Buy / [X] Hold / [X] Sell — Avg target: $[X] ([X]% upside/downside from current price)

@@ -71,7 +71,7 @@ Paste your holdings. Get graded.
 /review AAPL 40%, GOOGL 30%, MSFT 30%
 ```
 
-Returns: overall grade (A-F), your 3 biggest problems, holdings breakdown, sector exposure, risk assessment, and specific suggestions. Grades across 5 categories: Diversification, Valuation, Growth, Income, Risk.
+Returns: overall grade (A-F), your 3 biggest problems, holdings breakdown, sector exposure, risk assessment, and specific suggestions. Grades across 4 categories: Diversification, Valuation, Growth, Risk.
 
 ### `/discover` — What's worth looking at
 

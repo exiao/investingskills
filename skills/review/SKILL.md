@@ -73,7 +73,7 @@ cat /tmp/bloom/review-info.json | jq '.[] | {ticker: .symbol, pe: .pe_ratio, sec
 
 ## Grading Rubric
 
-Grade the portfolio A through F across 5 categories. Average them for the overall grade.
+Grade the portfolio A through F across 4 categories. Average them for the overall grade.
 
 ### Diversification
 | Grade | Criteria |
@@ -101,15 +101,6 @@ Grade the portfolio A through F across 5 categories. Average them for the overal
 | C | 5-12% avg growth |
 | D | Under 5% avg growth |
 | F | Declining revenue across majority of holdings |
-
-### Income
-| Grade | Criteria |
-|-------|----------|
-| A | >3% weighted avg dividend yield with sustainable payout |
-| B | 1.5-3% yield |
-| C | <1.5% yield with dividend payers |
-| D | No dividend income |
-| F | No income + high payout ratios among non-payers |
 
 ### Risk
 | Grade | Criteria |
@@ -164,7 +155,6 @@ Grade the portfolio A through F across 5 categories. Average them for the overal
 | Diversification | [X] | [One-line reason] |
 | Valuation | [X] | [One-line reason] |
 | Growth | [X] | [One-line reason] |
-| Income | [X] | [One-line reason] |
 | Risk | [X] | [One-line reason] |
 
 ---

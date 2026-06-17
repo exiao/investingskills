@@ -95,7 +95,7 @@ bloom info AAPL MSFT GOOGL          # batch up to 10 tickers
 bloom info NVDA -o /tmp/bloom/nvda-info.json
 ```
 
-Key output fields: `price`, `market_cap`, `pe_ratio`, `sector`, `analyst_consensus`, `price_target`, `bottom_line`
+Key output fields: `symbol`, `price`, `change_pct`, `market_cap`, `pe_ratio`, `sector`, `analyst_consensus`, `price_target`, `bottom_line`
 
 ---
 
@@ -106,12 +106,11 @@ Historical financial metrics. Always specify `--type`.
 bloom financials AAPL --type revenue
 bloom financials AAPL --type operating_margin
 bloom financials AAPL --type free_cash_flow
-bloom financials AAPL --type net_income
-bloom financials AAPL --type eps
+bloom financials AAPL --type net_earnings
 bloom financials AAPL --type revenue -o /tmp/bloom/aapl-revenue.json
 ```
 
-Available types: `revenue`, `operating_margin`, `free_cash_flow`, `net_income`, `eps`
+Available types: `revenue`, `revenue_growth`, `operating_margin`, `net_earnings`, `net_earnings_growth`, `free_cash_flow`, `free_cash_flow_growth`, `stock_based_compensation`, `stock_based_compensation_growth`
 
 ---
 
@@ -161,6 +160,8 @@ bloom news AAPL MSFT --limit 3 -o /tmp/bloom/news.json
 ```
 
 Default limit: 10. Recommended: `--limit 5` for research, `--limit 3` for briefings.
+
+Key output fields: list of articles with `headline`, `source`, `published_at`, `url`, `summary`
 
 ---
 
