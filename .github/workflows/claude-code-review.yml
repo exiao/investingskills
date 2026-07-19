@@ -30,7 +30,12 @@ jobs:
       - name: Run Claude Code Review
         id: claude-review
         timeout-minutes: 60
-        uses: anthropics/claude-code-action@v1
+        # Pin the last verified action revision: the moving v1 tag now resolves to
+        # SDK 0.3.215, which aborts this pull_request agent flow before its first
+        # turn (success + is_error:true). This revision ran the same Opus 4.8
+        # review configuration successfully; keeping it immutable prevents a
+        # silent action-runtime upgrade from disabling reviews again.
+        uses: anthropics/claude-code-action@9dd8b95a392eb34b6f5fb56cf5a64cb735912d4b
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
