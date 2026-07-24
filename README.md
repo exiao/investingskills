@@ -47,7 +47,7 @@ git clone https://github.com/exiao/investingskills.git ~/.claude/skills/investin
 ```bash
 git clone https://github.com/exiao/investingskills.git
 ```
-Then point your agent's skills directory to the `skills/` folder.
+Then point your agent's skills directory to the cloned repo root (each skill lives in its own top-level folder).
 
 That's it. Start with `/research AAPL` and see real data.
 
@@ -145,7 +145,7 @@ No scraping. No stale training data. No hallucinated numbers.
 
 Found a bug? Want to improve a skill? PRs welcome.
 
-The skills are markdown files in `skills/`. Edit the SKILL.md, test it, submit a PR.
+Each skill is a markdown file in its own top-level folder (e.g. `research/SKILL.md`). Edit the SKILL.md, test it, submit a PR.
 
 ## License
 
